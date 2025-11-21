@@ -1,0 +1,234 @@
+{
+	"info": {
+		"_postman_id": "eab63aa1-6fb6-4eff-8e23-5060855c277c",
+		"name": "Evershop Demo -  API Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42958869"
+	},
+	"item": [
+		{
+			"name": "Scarch_Item",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/search?keyword=Nike+react&ajax=true",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "Nike+react"
+						},
+						{
+							"key": "ajax",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View_Item",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/nike-react-infinity-run-flyknit-175?ajax=true",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"nike-react-infinity-run-flyknit-175"
+					],
+					"query": [
+						{
+							"key": "ajax",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Item with Color & Size",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/nike-react-infinity-run-flyknit-175?size=5&color=14&ajax=true",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"nike-react-infinity-run-flyknit-175"
+					],
+					"query": [
+						{
+							"key": "size",
+							"value": "5"
+						},
+						{
+							"key": "color",
+							"value": "14"
+						},
+						{
+							"key": "ajax",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add to Cart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"qty\": \"1\",\r\n    \"sku\": \"NJC44141-Black-L\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/cart/mine/items",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"cart",
+						"mine",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Card",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/cart?ajax=true",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"cart"
+					],
+					"query": [
+						{
+							"key": "ajax",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Increase Item",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"qty\": 1,\r\n    \"action\": \"increase\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/cart/3d6e24b6-cd49-4860-b098-e4449acbd873/items/63524d07-2da9-46b2-9d05-c0b3273ef6cb",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"cart",
+						"3d6e24b6-cd49-4860-b098-e4449acbd873",
+						"items",
+						"63524d07-2da9-46b2-9d05-c0b3273ef6cb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Decrease Item",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"qty\": 1, \r\n    \"action\": \"decrease\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/cart/3d6e24b6-cd49-4860-b098-e4449acbd873/items/63524d07-2da9-46b2-9d05-c0b3273ef6cb",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"cart",
+						"3d6e24b6-cd49-4860-b098-e4449acbd873",
+						"items",
+						"63524d07-2da9-46b2-9d05-c0b3273ef6cb"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
